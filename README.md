@@ -16,7 +16,7 @@
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 Teachers usually find out a student has failed only after the final exam. This project asks whether information available **after term 1** (the first-term grade, attendance, past failures, study habits and background) can flag at-risk students early.
 
@@ -29,7 +29,7 @@ It also connects to my hardware project **SmartAttend** (an RFID attendance syst
 4. Build and tune a Decision Tree and KNN, using cross-validation to choose settings
 5. Compare against a baseline with accuracy, cross-validation and confusion matrices
 
-## 📊 Dataset
+##  Dataset
 
 - **Name:** UCI Student Performance Dataset (Maths)
 - **Link:** https://archive.ics.uci.edu/dataset/320/student+performance
@@ -37,7 +37,7 @@ It also connects to my hardware project **SmartAttend** (an RFID attendance syst
 - **Target:** `passed` = 1 if final grade `G3` ≥ 10 / 20, else 0 (67% pass)
 - A copy of the dataset (`student-mat.csv`) is included in this repository.
 
-## 🔍 Key Findings from the Data
+##  Key Findings from the Data
 
 - **38 students have a final grade of 0, and all 38 have 0 absences.** They most likely dropped out. I kept them as fails, because an early-warning system should catch them, but excluded them from the attendance analysis.
 - **Attendance matters:** the pass rate falls from **84%** (no absences) to **55%** (more than 10 days missed).
@@ -45,31 +45,31 @@ It also connects to my hardware project **SmartAttend** (an RFID attendance syst
 
 <p align="center"><img src="attendance_vs_pass_rate.png" alt="Pass rate by absences" width="70%"></p>
 
-## 🧠 Models
+##  Models
 
-| | 🌳 Decision Tree | 📍 KNN |
+| |  Decision Tree |  KNN |
 |---|---|---|
 | **Features** | All 40 (after encoding), with `G2` hidden | 1st-term grade, absences, past failures (scaled) |
 | **Tuning** | `max_depth` chosen by 5-fold CV → **1** | `k` chosen by 5-fold CV → **11** |
 | **Key lesson** | An unlimited tree overfits: 100% train, 77% test | With all 40 features it's no better than the baseline |
 
 <details>
-<summary><b>📉 See the overfitting chart</b></summary>
+<summary><b> See the overfitting chart</b></summary>
 <br>
 <p align="center"><img src="overfitting.png" alt="Overfitting" width="80%"></p>
 </details>
 
-## 📈 Results
+##  Results
 
 | Model | Test accuracy | 5-fold CV | Failing students caught | False alarms |
 |---|---|---|---|---|
 | Baseline (everyone passes) | 67.1% | — | 0 / 26 | 0 |
-| 🌳 Decision Tree | 79.7% | 81.0% | **25 / 26** | 15 |
-| 📍 KNN (k = 11) | **81.0%** | **86.6%** | 20 / 26 | 9 |
+|  Decision Tree | 79.7% | 81.0% | **25 / 26** | 15 |
+|  KNN (k = 11) | **81.0%** | **86.6%** | 20 / 26 | 9 |
 
 <p align="center"><img src="confusion_matrices.png" alt="Confusion matrices" width="90%"></p>
 
-## ✅ Conclusion
+##  Conclusion
 
 Both models clearly beat the baseline, but they're good at different things, so **the better model depends on the school**:
 
@@ -88,7 +88,7 @@ Both models clearly beat the baseline, but they're good at different things, so 
 ---
 
 <details>
-<summary><b>⚙️ Setup instructions</b></summary>
+<summary><b> Setup instructions</b></summary>
 <br>
 
 ```bash
@@ -101,7 +101,7 @@ Then choose **Kernel → Restart & Run All**.
 </details>
 
 <details>
-<summary><b>🗂️ Repository structure</b></summary>
+<summary><b> Repository structure</b></summary>
 <br>
 
 ```
