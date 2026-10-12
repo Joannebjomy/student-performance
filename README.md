@@ -115,7 +115,7 @@ student-performance/
 </details>
 
 <details>
-<summary><b>🛠️ Tech stack</b></summary>
+<summary><b> Tech stack</b></summary>
 <br>
 Python · pandas · NumPy · scikit-learn · matplotlib · seaborn · Jupyter
 </details>
