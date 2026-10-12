@@ -25,18 +25,15 @@ It also connects to my hardware project **SmartAttend** (an RFID attendance syst
 - **Link:** https://archive.ics.uci.edu/dataset/320/student+performance
 - **Size:** 395 students × 33 columns, no missing values
 - **Target:** `passed` = 1 if final grade `G3` ≥ 10 / 20, else 0 (67% pass)
-- A copy is included in `data/student-mat.csv`, so the notebook runs offline.
+- A copy of the dataset (`student-mat.csv`) is included in this repository.
 
 ##  Repository Structure
-
-```
 student-performance/
-├── student_performance_prediction.ipynb   # the full project notebook
-├── data/student-mat.csv                    # dataset
-├── images/                                 # charts used in this README
+├── student_performance_prediction.ipynb   
+├── student-mat.csv                        
+├── *.png                                  
 ├── requirements.txt
 └── README.md
-```
 
 ##  Setup Instructions
 
@@ -53,7 +50,7 @@ Then choose **Kernel → Restart & Run All**.
 - **38 students have a final grade of 0, and all 38 have 0 absences.** They most likely dropped out. I kept them as fails, because an early-warning system should catch them, but excluded them from the attendance analysis.
 - **Attendance matters:** the pass rate falls from **84%** (no absences) to **55%** (more than 10 days missed).
 
-![Pass rate by absences](images/attendance_vs_pass_rate.png)
+![Pass rate by absences](attendance_vs_pass_rate.png)
 
 - **Past failures** are a strong warning sign: 75% pass with no past failures vs 18% with two.
 
@@ -65,7 +62,7 @@ Then choose **Kernel → Restart & Run All**.
 | Tuning | `max_depth` chosen by 5-fold CV → **1** | `k` chosen by 5-fold CV → **11** |
 | Key lesson | An unlimited tree overfits: 100% train, 77% test | With all 40 features it's no better than the baseline |
 
-![Overfitting](images/overfitting.png)
+![Overfitting](overfitting.png)
 
 ## Results
 
@@ -75,7 +72,7 @@ Then choose **Kernel → Restart & Run All**.
 | Decision Tree | 79.7% | 81.0% | **25 / 26** | 15 |
 | KNN (k = 11) | **81.0%** | **86.6%** | 20 / 26 | 9 |
 
-![Confusion matrices](images/confusion_matrices.png)
+![Confusion matrices](confusion_matrices.png)
 
 ##  Conclusion
 
