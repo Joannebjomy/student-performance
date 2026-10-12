@@ -28,12 +28,14 @@ It also connects to my hardware project **SmartAttend** (an RFID attendance syst
 - A copy of the dataset (`student-mat.csv`) is included in this repository.
 
 ##  Repository Structure
+```
 student-performance/
 ├── student_performance_prediction.ipynb   
 ├── student-mat.csv                        
 ├── *.png                                  
 ├── requirements.txt
 └── README.md
+```
 
 ##  Setup Instructions
 
