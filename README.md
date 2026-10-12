@@ -1,12 +1,12 @@
-# 🎓 Early Warning: Predicting Which Students Need Help
+#  Early Warning: Predicting Which Students Need Help
 
 A beginner machine learning project that predicts, **after the first term**, whether a student will **pass or fail** the final maths exam, so teachers can step in while there's still time. It compares a **Decision Tree** and **K-Nearest Neighbors (KNN)**.
 
-Built by **Joanne** for the IEEE WIE Technical Domain recruitment (Mission 1).
+Built by **Joanne** 
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 Teachers usually find out a student has failed only after the final exam. This project asks whether information available **after term 1** (the first-term grade, attendance, past failures, study habits and background) can flag at-risk students early.
 
@@ -19,7 +19,7 @@ It also connects to my hardware project **SmartAttend** (an RFID attendance syst
 4. Build and tune a Decision Tree and KNN, using cross-validation to choose settings
 5. Compare against a baseline with accuracy, cross-validation and confusion matrices
 
-## 📊 Dataset
+##  Dataset
 
 - **Name:** UCI Student Performance Dataset (Maths)
 - **Link:** https://archive.ics.uci.edu/dataset/320/student+performance
@@ -27,7 +27,7 @@ It also connects to my hardware project **SmartAttend** (an RFID attendance syst
 - **Target:** `passed` = 1 if final grade `G3` ≥ 10 / 20, else 0 (67% pass)
 - A copy is included in `data/student-mat.csv`, so the notebook runs offline.
 
-## 🗂️ Repository Structure
+##  Repository Structure
 
 ```
 student-performance/
@@ -38,7 +38,7 @@ student-performance/
 └── README.md
 ```
 
-## ⚙️ Setup Instructions
+##  Setup Instructions
 
 ```bash
 git clone https://github.com/Joannebjomy/student-performance.git
@@ -48,7 +48,7 @@ jupyter notebook student_performance_prediction.ipynb
 ```
 Then choose **Kernel → Restart & Run All**.
 
-## 🔍 Key Findings from the Data
+##  Key Findings from the Data
 
 - **38 students have a final grade of 0, and all 38 have 0 absences.** They most likely dropped out. I kept them as fails, because an early-warning system should catch them, but excluded them from the attendance analysis.
 - **Attendance matters:** the pass rate falls from **84%** (no absences) to **55%** (more than 10 days missed).
@@ -57,7 +57,7 @@ Then choose **Kernel → Restart & Run All**.
 
 - **Past failures** are a strong warning sign: 75% pass with no past failures vs 18% with two.
 
-## 🧠 Models
+##  Models
 
 | | Decision Tree | KNN |
 |---|---|---|
@@ -67,7 +67,7 @@ Then choose **Kernel → Restart & Run All**.
 
 ![Overfitting](images/overfitting.png)
 
-## 📈 Results
+## Results
 
 | Model | Test accuracy | 5-fold CV | Failing students caught | False alarms |
 |---|---|---|---|---|
@@ -77,7 +77,7 @@ Then choose **Kernel → Restart & Run All**.
 
 ![Confusion matrices](images/confusion_matrices.png)
 
-## ✅ Conclusion
+##  Conclusion
 
 Both models clearly beat the baseline, but they're good at different things, so **the better model depends on the school**:
 
@@ -93,5 +93,5 @@ Since missing a struggling student costs more than a false alarm, I'd lean towar
 - KNN needs scaling and carefully chosen features.
 - Accuracy isn't everything: confusion matrices show *which* mistakes a model makes.
 
-## 🛠️ Tech Stack
+##  Tech Stack
 Python · pandas · NumPy · scikit-learn · matplotlib · seaborn · Jupyter
